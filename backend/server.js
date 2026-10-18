@@ -12,8 +12,8 @@ const { validateTask, validateRegister, validateLogin } = require('./middleware/
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-const MONGO_URI = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/task_manager_24cs051';
-const JWT_SECRET = process.env.JWT_SECRET || 'supersecretjwtkey_24cs051_aayush_practical10';
+const MONGO_URI = process.env.MONGO_URI || 'mongodb://127.0.0.1:27017/task_manager_24cs050';
+const JWT_SECRET = process.env.JWT_SECRET || 'supersecretjwtkey_24cs050_vivek_practical10';
 const JWT_EXPIRES_IN = process.env.JWT_EXPIRES_IN || '1h';
 const CACHE_TTL_SECONDS = parseInt(process.env.CACHE_TTL_SECONDS || '60', 10);
 
@@ -39,15 +39,15 @@ mongoose
 // Seed default demo student user & tasks for instant verification
 async function seedDemoUserAndTasks() {
   try {
-    let demoUser = await User.findOne({ email: '24cs051@charusat.edu.in' });
+    let demoUser = await User.findOne({ email: '24cs050@charusat.edu.in' });
     if (!demoUser) {
       console.log('Creating default demo user for Practical 7...');
       demoUser = await User.create({
-        name: 'Aayush Malhotra',
-        email: '24cs051@charusat.edu.in',
+        name: 'Vivek Maheshwari',
+        email: '24cs050@charusat.edu.in',
         password: 'password123',
       });
-      console.log('Demo user created: 24cs051@charusat.edu.in / password123');
+      console.log('Demo user created: 24cs050@charusat.edu.in / password123');
     }
 
     const taskCount = await Task.countDocuments({ user: demoUser._id });
@@ -519,7 +519,7 @@ app.get('/health', (req, res) => {
 app.get('/', (req, res) => {
   res.status(200).json({
     message: 'ITUE301 Practical 11: Containerization with Docker and Docker Compose API',
-    student: 'Aayush Malhotra (24CS051)',
+    student: 'Vivek Maheshwari (24CS050)',
     containerization: {
       orchestration: 'Docker Compose',
       stack: {
@@ -550,7 +550,7 @@ app.get('/', (req, res) => {
       deleteTask: 'DELETE /tasks/:id (Protected)',
     },
     demoCredentials: {
-      email: '24cs051@charusat.edu.in',
+      email: '24cs050@charusat.edu.in',
       password: 'password123',
     },
   });

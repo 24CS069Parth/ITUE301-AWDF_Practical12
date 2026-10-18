@@ -5,7 +5,7 @@ name: CI Pipeline
 # CSPIT - Department of Computer Science & Engineering
 # ITUE301: Advanced Web Development Frameworks
 # Practical 12: CI/CD Pipeline with GitHub Actions
-# Student: Aayush Malhotra (ID: 24CS051)
+# Student: Vivek Maheshwari (ID: 24CS050)
 # ==============================================================================
 
 # Supplementary Problem 2: Configure trigger for both push and pull_request targeting main
@@ -64,7 +64,7 @@ jobs:
         run: npm test
         env:
           NODE_ENV: test
-          JWT_SECRET: supersecret_ci_test_key_24cs051
+          JWT_SECRET: supersecret_ci_test_key_24cs050
           PORT: 5000
 
       - name: Pipeline Status Summary
@@ -72,6 +72,6 @@ jobs:
         run: |
           echo "=========================================="
           echo "Practical 12 CI Pipeline Completed"
-          echo "Student: Aayush Malhotra (24CS051)"
+          echo "Student: Vivek Maheshwari (24CS050)"
           echo "Test Job Status: ${{ job.status }}"
           echo "=========================================="
